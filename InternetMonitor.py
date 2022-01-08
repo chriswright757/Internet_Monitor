@@ -40,6 +40,7 @@ def send_ping_request(host="1.1.1.1", port=53, timeout=3):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host,port))
     except OSError as error:
+        print('unable to ping')
         return False
     else:
         s.close()
